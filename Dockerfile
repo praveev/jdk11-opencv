@@ -14,8 +14,8 @@ RUN \
     git clone https://github.com/opencv/opencv_contrib
 
 RUN \
-    cd ~/opencv_contrib; git checkout 4.1.2 && \
-    cd ~/opencv; git checkout 4.1.2; mkdir build;cd build && \
+    cd ~/opencv_contrib; git checkout 4.4.0 && \
+    cd ~/opencv; git checkout 4.4.0; mkdir build;cd build && \
     CC=/usr/bin/gcc-4.8 CXX=/usr/bin/g++-4.8 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local \
         -D INSTALL_C_EXAMPLES=OFF -D WITH_CUDA=OFF -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
         -DBUILD_SHARED_LIBS=OFF -D CMAKE_CXX_STANDARD_LIBRARIES="-ljpeg -ljbig -llzma" -DCMAKE_EXE_LINKER_FLAGS="-static" \
